@@ -101,6 +101,11 @@ abstract class BinaryDownloader {
     const stream = await fetch(this.url, {
       signal: controller.signal,
     });
+
+    if (!stream.ok) {
+      throw new Error(`Failed to download ${this.url}: HTTP ${stream.status} ${stream.statusText}`);
+    }
+
     const total = Number(stream.headers.get("content-length"));
     const bar = this.bar;
     let fileHandle: FileHandle | undefined = undefined;
@@ -178,7 +183,7 @@ class KubectlDownloader extends BinaryDownloader {
     const binaryName = getBinaryName("kubectl", { forPlatform: args.platform });
 
     super({ ...args, binaryName }, bar);
-    this.url = `https://storage.googleapis.com/kubernetes-release/release/v${args.version}/bin/${args.platform}/${args.downloadArch}/${binaryName}`;
+    this.url = `https://dl.k8s.io/release/v${args.version}/bin/${args.platform}/${args.downloadArch}/${binaryName}`;
   }
 }
 

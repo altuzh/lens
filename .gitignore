@@ -8,7 +8,9 @@ site/
 lerna-debug.log
 coverage
 dist
+!packages/openlens-node-pod-menu/dist/**
 node_modules
 .linkable.json
 yalc.lock
 .yalc
+scratch/

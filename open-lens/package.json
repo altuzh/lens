@@ -35,9 +35,9 @@
     "postinstall": "electron-rebuild"
   },
   "config": {
-    "k8sProxyVersion": "0.3.0",
-    "bundledKubectlVersion": "1.23.3",
-    "bundledHelmVersion": "3.11.0",
+    "k8sProxyVersion": "0.4.0",
+    "bundledKubectlVersion": "1.32.2",
+    "bundledHelmVersion": "3.17.1",
     "sentryDsn": "",
     "contentSecurityPolicy": "script-src 'unsafe-eval' 'self'; frame-src https://*.lens.app:*/; img-src * data:",
     "welcomeRoute": "/welcome"
@@ -197,6 +197,7 @@
     "@k8slens/kube-object": "^1.0.0",
     "@k8slens/kubectl-versions": "^1.0.0",
     "@k8slens/legacy-extension-example": "^1.0.0",
+    "@alebcay/openlens-node-pod-menu": "^0.1.2",
     "@k8slens/legacy-extensions": "^1.0.0",
     "@k8slens/legacy-global-di": "^1.0.0",
     "@k8slens/list-layout": "^1.0.0",

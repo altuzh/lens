@@ -60,7 +60,7 @@ export interface DownloadMirror {
 
 export const defaultPackageMirror = "default";
 const defaultDownloadMirrorData: DownloadMirror = {
-  url: "https://storage.googleapis.com/kubernetes-release/release",
+  url: "https://dl.k8s.io/release",
   label: "Default (Google)",
   platforms: new Set(["darwin", "win32", "linux"]),
 };
